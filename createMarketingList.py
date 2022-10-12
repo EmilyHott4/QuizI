@@ -23,9 +23,26 @@
 
 import csv
 
+vendor_list = {}
+
+
+infile = open('VendorList.csv','r')
+csvfile = csv.reader(infile,delimiter=',')
+
+reader = csv.DictReader(open('VendorList.csv'))
+#reader = csv.reader(infile)
+
+for l in reader:
+     outfile = 
+     print(l)
+
+
+with open ('marketinglistFINAL.csv','w') as f:
+    for key in vendor_list.keys():
+        f.write( "%s, %s/n" % (key, vendor_list[key]))
 # open the vendorlist file
 
-
+VendorList.close()
 # create a csv object from the file object
 
 
