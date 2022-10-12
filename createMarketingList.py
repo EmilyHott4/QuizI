@@ -19,7 +19,9 @@
 
 # Note: you can use the comments below to guide you through the logic of the code. You are not
 # required to follow it. ALSO NOT ALL STEPS HAVE BEEN COMMENTED. You may have additional steps.
-
+#with open ('marketinglistFINAL.csv','w') as f:
+    #for key in vendor_list.keys():
+        #f.write( "%s, %s/n" % (key, vendor_list[key]))
 
 import csv
 
@@ -29,20 +31,29 @@ vendor_list = {}
 infile = open('VendorList.csv','r')
 csvfile = csv.reader(infile,delimiter=',')
 
-reader = csv.DictReader(open('VendorList.csv'))
+outfile = open('marketinglistFINAL.csv','w')
+
+
+#reader = csv.DictReader(open('VendorList.csv'))
 #reader = csv.reader(infile)
 
-for l in reader:
-     outfile = 
-     print(l)
+for rec in csvfile:
+     name = rec[1] + ' ' + rec[2]
+     email = rec[3]
+     number = rec[5]
+
+     vendor_list[name] = {'email':email, 'number': number}
 
 
-with open ('marketinglistFINAL.csv','w') as f:
-    for key in vendor_list.keys():
-        f.write( "%s, %s/n" % (key, vendor_list[key]))
+
+
+
+
+
+
 # open the vendorlist file
 
-VendorList.close()
+
 # create a csv object from the file object
 
 
@@ -66,7 +77,7 @@ VendorList.close()
 
 
 # print the dictionary after the loop is finished
-
+#print(vender_list)
 
 
 # iternate through the dictionary and write to the output file
@@ -75,3 +86,5 @@ VendorList.close()
 
 # close your output file
 
+#VendorList.close()
+outfile.close()
